@@ -1,19 +1,18 @@
 package Vista;
 
+import Controlador.CarritoController;
 import Controlador.ProductoController;
 import Entidad.CarritoCompras;
 import Entidad.Producto;
 import Repositorios.CarritoRepository;
-import Repositorios.ProductoRepository;
 
-import java.util.Collection;
-import java.util.Collections;
+
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class CarritoView {
-
-    ProductoController prodcont = new ProductoController();
+    static CarritoController carritoController = new CarritoController();
     static CarritoRepository carritoRepository = new CarritoRepository();
     static CarritoCompras carritoCompras = new CarritoCompras();
     static Scanner scanner = new Scanner(System.in);
@@ -31,8 +30,7 @@ public class CarritoView {
     }
 
     public static void verCarritoActual(CarritoCompras carritoCompras) {
-        for (Producto p : carritoCompras.productos)
-        {
+        for (Producto p : carritoCompras.productos) {
             System.out.println(p.toString());
 
         }
@@ -45,8 +43,7 @@ public class CarritoView {
         }
     }
 
-    public static  void menuComprador ()
-    {
+    public static void menuComprador() {
         System.out.println("Menú:");
         System.out.println("1. Ver Productos");
         System.out.println("2. Buscar");
@@ -55,6 +52,20 @@ public class CarritoView {
         System.out.println("5. finalizar compra");
         System.out.println("6. Salir");
         System.out.print("Ingrese su opción: ");
+    }
+
+    public void totalCompra(int total) {
+        System.out.println("El total de la compra es : $ " + total);
+
+    }
+
+    public void totalCategorias(Set<String> categoriaUnica) {
+
+        System.out.println("Las Categorias que has comprado son : ");
+        for (String s : categoriaUnica)
+        {
+            System.out.println(s);
+        }
     }
 
 }

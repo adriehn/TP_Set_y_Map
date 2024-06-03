@@ -15,8 +15,8 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Ingresa como:");
-            System.out.println("1. administrador 1");
-            System.out.println("2. comprador 2");
+            System.out.println("1. administrador.");
+            System.out.println("2. comprador.");
             System.out.println("3. Salir");
             System.out.print("Ingrese su opción: ");
 
@@ -53,7 +53,6 @@ public class Menu {
         while (true) {
 
             carritoView.menuComprador();
-
             int opcion = scanner.nextInt();
             scanner.nextLine();
 

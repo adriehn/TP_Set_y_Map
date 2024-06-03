@@ -2,7 +2,6 @@ package Vista;
 
 import Entidad.Producto;
 import Repositorios.ProductoRepository;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.Map;
 import java.util.Scanner;
