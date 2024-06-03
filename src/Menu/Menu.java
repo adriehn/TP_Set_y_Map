@@ -13,13 +13,10 @@ public class Menu {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("Ingresa como:");
-            System.out.println("1. administrador.");
-            System.out.println("2. comprador.");
-            System.out.println("3. Salir");
-            System.out.print("Ingrese su opción: ");
+        CarritoView carritoView = new CarritoView();
 
+        while (true) {
+            carritoView.primerMenu();
             int opcion = scanner.nextInt();
             scanner.nextLine();
 
@@ -31,11 +28,10 @@ public class Menu {
                     Comprador();
                     break;
                 case 3:
-                    System.out.println("Saliendo del programa...");
+                    carritoView.salir();
                     return;
-
                 default:
-                    System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+                    carritoView.opcionInvalida();
             }
         }
 
@@ -74,10 +70,10 @@ public class Menu {
                     carritoCompras = new CarritoCompras(0);
                     break;
                 case 6:
-                    System.out.println("Saliendo del programa...");
+                    carritoView.salir();
                     return;
                 default:
-                    System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+                    carritoView.opcionInvalida();
             }
         }
 
@@ -110,10 +106,10 @@ public class Menu {
                     carritoView.verLista();
                     break;
                 case 5:
-                    System.out.println("Saliendo del programa...");
+                    carritoView.salir();
                     return;
                 default:
-                    System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+                    carritoView.opcionInvalida();
             }
         }
 

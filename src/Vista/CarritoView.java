@@ -67,5 +67,22 @@ public class CarritoView {
             System.out.println(s);
         }
     }
+    public static void primerMenu()
+    {
+        System.out.println("Ingresa como:");
+        System.out.println("1. administrador.");
+        System.out.println("2. comprador.");
+        System.out.println("3. Salir");
+        System.out.print("Ingrese su opción: ");
+    }
 
+    public void salir ()
+    {
+        System.out.println("Saliendo del programa...");
+
+    } public void opcionInvalida ()
+    {
+        System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+
+    }
 }
