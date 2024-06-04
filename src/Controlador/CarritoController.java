@@ -13,29 +13,27 @@ public class CarritoController {
 
     public Set<String> categoriaUnica = new HashSet<>();
     ProductoController prodcont = new ProductoController();
-    static CarritoRepository carritoRepository = new CarritoRepository();
-    static CarritoView vista = new CarritoView();
 
     public CarritoController() {
     }
 
     public void agregarAlCarrito(CarritoCompras carritoCompras) {
        Producto p = prodcont.buscar();
-        String opcion = vista.agrearAlCarrito();
+        String opcion = CarritoView.agrearAlCarrito();
         if (opcion.equalsIgnoreCase("s") && p != null) {
             carritoCompras.productos.add(p);
             categoriaUnica.add(p.getCategoria());
         }
         else {
-            vista.opcionInvalida();
+            CarritoView.opcionInvalida();
         }
     }
 
     public void finalizarCompra(CarritoCompras carritoCompras) {
         int total = totalCompra(carritoCompras);
-        vista.totalCompra(total);
-        carritoRepository.carritocomprasRepository.put(carritoCompras.getCarritoID().toString(), carritoCompras);
-        vista.totalCategorias(categoriaUnica);
+        CarritoView.totalCompra(total);
+        CarritoRepository.carritocomprasRepository.put(carritoCompras.getCarritoID().toString(), carritoCompras);
+        CarritoView.totalCategorias(categoriaUnica);
 
     }
 
@@ -49,8 +47,8 @@ public class CarritoController {
     }
 
     public static void verLista() {
-        for (Map.Entry<String, CarritoCompras> entity : carritoRepository.carritocomprasRepository.entrySet()) {
-            vista.verLista(entity);
+        for (Map.Entry<String, CarritoCompras> entity : CarritoRepository.carritocomprasRepository.entrySet()) {
+            CarritoView.verLista(entity);
         }
     }
 

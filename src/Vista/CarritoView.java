@@ -13,10 +13,9 @@ public class CarritoView {
     public CarritoView() {
     }
 
-    public String agrearAlCarrito() {
+    public static String agrearAlCarrito() {
         System.out.println("Agregar al carrito? s/n");
-        String opcion = scanner.nextLine();
-        return opcion;
+        return scanner.nextLine();
     }
 
     public static void verCarritoActual(CarritoCompras carritoCompras) {
@@ -37,11 +36,11 @@ public class CarritoView {
         System.out.print("Ingrese su opción: ");
     }
 
-    public void totalCompra(int total) {
+    public static void totalCompra(int total) {
         System.out.println("El total de la compra es : $ " + total);
     }
 
-    public void totalCategorias(Set<String> categoriaUnica) {
+    public static void totalCategorias(Set<String> categoriaUnica) {
 
         System.out.println("Las Categorias que has comprado son : ");
         for (String s : categoriaUnica) {
@@ -57,12 +56,12 @@ public class CarritoView {
         System.out.print("Ingrese su opción: ");
     }
 
-    public void salir() {
+    public static void salir() {
         System.out.println("Saliendo del programa...");
 
     }
 
-    public void opcionInvalida() {
+    public static void opcionInvalida() {
         System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
     }
 

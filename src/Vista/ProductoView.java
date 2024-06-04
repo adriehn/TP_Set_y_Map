@@ -1,7 +1,6 @@
 package Vista;
 
 import Entidad.Producto;
-import Repositorios.ProductoRepository;
 
 import java.util.Map;
 import java.util.Scanner;
@@ -11,7 +10,6 @@ public class ProductoView {
     }
 
     static Scanner scanner = new Scanner(System.in);
-    static ProductoRepository prodrepo = new ProductoRepository();
 
     public static Producto crearProducto() {
 
@@ -23,23 +21,19 @@ public class ProductoView {
         System.out.println("Ingrese la categoria: ");
         String categoria = scanner.nextLine();
 
-        Producto p = new Producto(nombre, precio, categoria);
-
-
-        return p;
+        return new Producto(nombre, precio, categoria);
 
     }
 
     public static String buscar() {
         System.out.println("Ingrese el ID del producto");
-        String id = scanner.nextLine();
-        return id;
+        return scanner.nextLine();
     }
 
 
     public static void mostrarUnProducto(Producto p) {
         if (p != null) {
-            System.out.println(p.toString());
+            System.out.println(p);
 
         } else {
             System.out.println("No existe el producto buscado.");

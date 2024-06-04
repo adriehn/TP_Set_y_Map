@@ -8,31 +8,23 @@ public class CarritoCompras {
 
     private static Integer id=0;
 
-    private Integer carritoID;
+    private final Integer carritoID;
 
     public List<Producto> productos ;
 
-    public static Integer getId() {
-        return id;
-    }
+
 
     public Integer getCarritoID() {
         return carritoID;
     }
 
-    public void setCarritoID(Integer carritoID) {
-        this.carritoID = carritoID;
-    }
 
-
-
-    public CarritoCompras(Integer carritoID) {
+    public CarritoCompras( ) {
         this.carritoID = ++id;
         this.productos = new ArrayList<>();
     }
 
-    public CarritoCompras() {
-    }
+
 
     @Override
     public boolean equals(Object o) {

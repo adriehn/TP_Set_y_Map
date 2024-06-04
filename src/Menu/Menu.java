@@ -3,7 +3,6 @@ package Menu;
 import Controlador.CarritoController;
 import Controlador.ProductoController;
 import Entidad.CarritoCompras;
-import Entidad.Producto;
 import Vista.CarritoView;
 import Vista.ProductoView;
 
@@ -13,10 +12,9 @@ public class Menu {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        CarritoView carritoView = new CarritoView();
 
         while (true) {
-            carritoView.primerMenu();
+            CarritoView.primerMenu();
             int opcion = scanner.nextInt();
             scanner.nextLine();
 
@@ -28,10 +26,10 @@ public class Menu {
                     Comprador();
                     break;
                 case 3:
-                    carritoView.salir();
+                    CarritoView.salir();
                     return;
                 default:
-                    carritoView.opcionInvalida();
+                    CarritoView.opcionInvalida();
             }
         }
 
@@ -40,76 +38,68 @@ public class Menu {
 
     public static void Comprador() {
         Scanner scanner = new Scanner(System.in);
-        ProductoController controller = new ProductoController();
         CarritoController carritocontroller = new CarritoController();
-        CarritoCompras carritoCompras = new CarritoCompras(0);
-        CarritoView carritoView = new CarritoView();
-        Producto p = new Producto();
+        CarritoCompras carritoCompras = new CarritoCompras();
         while (true) {
 
-            carritoView.menuComprador();
+            CarritoView.menuComprador();
             int opcion = scanner.nextInt();
             scanner.nextLine();
 
             switch (opcion) {
                 case 1:
-                    controller.verLista();
+                    ProductoController.verLista();
                     break;
                 case 2:
-                    controller.buscar();
+                    ProductoController.buscar();
                     break;
                 case 3:
                     carritocontroller.agregarAlCarrito(carritoCompras);
                     break;
                 case 4:
-                    carritoView.verCarritoActual(carritoCompras);
+                    CarritoView.verCarritoActual(carritoCompras);
                     break;
                 case 5:
                     carritocontroller.finalizarCompra(carritoCompras);
-                    carritoCompras = new CarritoCompras(0);
+                    carritoCompras = new CarritoCompras();
                     break;
                 case 6:
-                    carritoView.salir();
+                    CarritoView.salir();
                     return;
                 default:
-                    carritoView.opcionInvalida();
+                    CarritoView.opcionInvalida();
             }
         }
 
     }
 
     public static void administrador() {
-        ProductoController productocontroller = new ProductoController();
-        CarritoView carritoView = new CarritoView();
-        ProductoView productoView = new ProductoView();
-        CarritoController carritoController = new CarritoController();
         Scanner scanner = new Scanner(System.in);
-        Producto p = new Producto();
         while (true) {
 
-            productoView.menuAdministrador();
+            ProductoView.menuAdministrador();
 
             int opcion = scanner.nextInt();
             scanner.nextLine();
 
             switch (opcion) {
                 case 1:
-                    productocontroller.agregarProducto();
+                    ProductoController.agregarProducto();
                     break;
                 case 2:
-                    productocontroller.verLista();
+                    ProductoController.verLista();
                     break;
                 case 3:
-                    productocontroller.buscar();
+                    ProductoController.buscar();
                     break;
                 case 4:
-                    carritoController.verLista();
+                    CarritoController.verLista();
                     break;
                 case 5:
-                    carritoView.salir();
+                    CarritoView.salir();
                     return;
                 default:
-                    carritoView.opcionInvalida();
+                    CarritoView.opcionInvalida();
             }
         }
 
