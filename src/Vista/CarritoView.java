@@ -1,31 +1,21 @@
 package Vista;
 
-import Controlador.CarritoController;
-import Controlador.ProductoController;
 import Entidad.CarritoCompras;
 import Entidad.Producto;
-import Repositorios.CarritoRepository;
-
 
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
 public class CarritoView {
-    static CarritoController carritoController = new CarritoController();
-    static CarritoRepository carritoRepository = new CarritoRepository();
-    static CarritoCompras carritoCompras = new CarritoCompras();
     static Scanner scanner = new Scanner(System.in);
 
     public CarritoView() {
     }
 
-    public String agrearAlCarrito(Producto p) {
-        String opcion = null;
-        if (p != null) {
-            System.out.println("Agregar al carrito? s/n");
-            opcion = scanner.nextLine();
-        }
+    public String agrearAlCarrito() {
+        System.out.println("Agregar al carrito? s/n");
+        String opcion = scanner.nextLine();
         return opcion;
     }
 
@@ -33,13 +23,6 @@ public class CarritoView {
         for (Producto p : carritoCompras.productos) {
             System.out.println(p.toString());
 
-        }
-    }
-
-    public static void verLista() {
-        for (Map.Entry<String, CarritoCompras> entry : carritoRepository.carritocomprasRepository.entrySet()) {
-
-            System.out.println(entry.getValue().toString());
         }
     }
 
@@ -56,19 +39,17 @@ public class CarritoView {
 
     public void totalCompra(int total) {
         System.out.println("El total de la compra es : $ " + total);
-
     }
 
     public void totalCategorias(Set<String> categoriaUnica) {
 
         System.out.println("Las Categorias que has comprado son : ");
-        for (String s : categoriaUnica)
-        {
+        for (String s : categoriaUnica) {
             System.out.println(s);
         }
     }
-    public static void primerMenu()
-    {
+
+    public static void primerMenu() {
         System.out.println("Ingresa como:");
         System.out.println("1. administrador.");
         System.out.println("2. comprador.");
@@ -76,13 +57,16 @@ public class CarritoView {
         System.out.print("Ingrese su opción: ");
     }
 
-    public void salir ()
-    {
+    public void salir() {
         System.out.println("Saliendo del programa...");
 
-    } public void opcionInvalida ()
-    {
-        System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+    }
 
+    public void opcionInvalida() {
+        System.out.println("Opción no válida. Por favor, ingrese una opción válida.");
+    }
+
+    public static void verLista(Map.Entry<String, CarritoCompras> a) {
+        System.out.println(a);
     }
 }

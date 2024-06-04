@@ -40,7 +40,6 @@ public class Menu {
 
     public static void Comprador() {
         Scanner scanner = new Scanner(System.in);
-
         ProductoController controller = new ProductoController();
         CarritoController carritocontroller = new CarritoController();
         CarritoCompras carritoCompras = new CarritoCompras(0);
@@ -54,10 +53,10 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    ProductoView.verLista();
+                    controller.verLista();
                     break;
                 case 2:
-                    p = controller.buscar();
+                    controller.buscar();
                     break;
                 case 3:
                     carritocontroller.agregarAlCarrito(carritoCompras);
@@ -80,9 +79,10 @@ public class Menu {
     }
 
     public static void administrador() {
-        ProductoController controller = new ProductoController();
+        ProductoController productocontroller = new ProductoController();
         CarritoView carritoView = new CarritoView();
         ProductoView productoView = new ProductoView();
+        CarritoController carritoController = new CarritoController();
         Scanner scanner = new Scanner(System.in);
         Producto p = new Producto();
         while (true) {
@@ -94,16 +94,16 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    controller.agregarProducto();
+                    productocontroller.agregarProducto();
                     break;
                 case 2:
-                    ProductoView.verLista();
+                    productocontroller.verLista();
                     break;
                 case 3:
-                    p = controller.buscar();
+                    productocontroller.buscar();
                     break;
                 case 4:
-                    carritoView.verLista();
+                    carritoController.verLista();
                     break;
                 case 5:
                     carritoView.salir();

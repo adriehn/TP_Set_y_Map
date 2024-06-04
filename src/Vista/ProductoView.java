@@ -36,14 +36,6 @@ public class ProductoView {
         return id;
     }
 
-    public static Producto encontrado(boolean a, String id) {
-        if (a == true) {
-            Producto encontrado = prodrepo.listaProductos.get(id);
-            return encontrado;
-        } else {
-            return null;
-        }
-    }
 
     public static void mostrarUnProducto(Producto p) {
         if (p != null) {
@@ -54,11 +46,10 @@ public class ProductoView {
         }
     }
 
-    public static void verLista() {
-        for (Map.Entry<String, Producto> entry : ProductoRepository.listaProductos.entrySet()) {
+    public static void verLista(Map.Entry<String, Producto> a) {
 
-            System.out.println(entry.getValue().toString());
-        }
+            System.out.println(a);
+
     }
 
     public static void menuAdministrador()
