@@ -9,7 +9,6 @@ import Vista.ProductoView;
 import java.util.Scanner;
 
 public class Menu {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -34,14 +33,11 @@ public class Menu {
         }
 
     }
-
-
     public static void Comprador() {
         Scanner scanner = new Scanner(System.in);
         CarritoController carritocontroller = new CarritoController();
         CarritoCompras carritoCompras = new CarritoCompras();
         while (true) {
-
             CarritoView.menuComprador();
             int opcion = scanner.nextInt();
             scanner.nextLine();
@@ -76,9 +72,7 @@ public class Menu {
     public static void administrador() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-
             ProductoView.menuAdministrador();
-
             int opcion = scanner.nextInt();
             scanner.nextLine();
 

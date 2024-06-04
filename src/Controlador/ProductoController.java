@@ -15,7 +15,6 @@ public class ProductoController {
         Producto p = ProductoView.crearProducto();
         ProductoRepository.listaProductos.put(p.getProductoID().toString(), p);
     }
-
     public static Producto buscar() {
         String id = ProductoView.buscar();
         boolean existe = ProductoRepository.listaProductos.containsKey(id);
@@ -32,6 +31,4 @@ public class ProductoController {
             ProductoView.verLista(entity);
         }
     }
-
-
 }

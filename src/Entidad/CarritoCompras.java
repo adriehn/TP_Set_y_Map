@@ -7,24 +7,16 @@ import java.util.Objects;
 public class CarritoCompras {
 
     private static Integer id=0;
-
     private final Integer carritoID;
-
     public List<Producto> productos ;
-
-
-
     public Integer getCarritoID() {
         return carritoID;
     }
-
 
     public CarritoCompras( ) {
         this.carritoID = ++id;
         this.productos = new ArrayList<>();
     }
-
-
 
     @Override
     public boolean equals(Object o) {
