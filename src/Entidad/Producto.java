@@ -6,11 +6,11 @@ public class Producto {
 
     private static Integer id = 0;
 
-    private String nombre;
-    private Integer precio;
-    private String categoria;
+    private final String nombre;
+    private final Integer precio;
+    private final String categoria;
 
-    private Integer productoID;
+    private final Integer productoID;
 
     public Producto(String nombre, Integer precio, String categoria) {
         this.nombre = nombre;
@@ -19,44 +19,19 @@ public class Producto {
         this.productoID = ++id;
     }
 
-    public Producto() {
-    }
-
     public Integer getProductoID() {
         return productoID;
-    }
-
-    public static Integer getId() {
-        return id;
-    }
-
-    public static void setId(Integer id) {
-        Producto.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public Integer getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Integer precio) {
-        this.precio = precio;
-    }
 
     public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
 
     @Override
     public boolean equals(Object o) {
